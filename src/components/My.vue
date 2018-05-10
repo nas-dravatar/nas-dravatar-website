@@ -88,7 +88,6 @@
 
 <script>
 import { upload, get, asyncGetAddr } from '@/api'
-import { MIN_VALUE } from 'long'
 // import request from 'superagent'
 // import { compress } from '@/lib/lzma'
 export default {
