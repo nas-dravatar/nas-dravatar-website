@@ -3,6 +3,6 @@ export const network = {
     address: ''
   },
   testnet: {
-    address: 'n2271u3znAQAahcr9VT7o4r7t4TWGMUBtpZ'
+    address: 'n1rxMnULswBeRKrNbikYN1fiMdnjUMvfSbt'
   }
 }

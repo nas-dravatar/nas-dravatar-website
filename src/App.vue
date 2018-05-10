@@ -10,7 +10,13 @@
     <div class="content has-text-centered">
        <h2>NasDravatar</h2>
       <p>
-        本服务由 <a href="https://incentive.nebulas.io/signup.html?invite=po4VY">Nebulas 星云链</a> 驱动 </p>
+        本服务由 <a href="https://incentive.nebulas.io/signup.html?invite=po4VY">
+        Nebulas 星云链</a> 驱动
+        <br>
+        本网站需要 Chrome 搭配
+        <a href="https://github.com/ChengOrangeJu/WebExtensionWallet">
+        WebExtensionWallet</a> 插件才能正常使用
+        </p>
     </div>
   </div>
 </footer>

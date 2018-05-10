@@ -45,7 +45,7 @@ export default {
       },
       {
         name: '文档',
-        to: 'https://github.com/nas-dravatar',
+        to: 'https://github.com/nas-dravatar/wiki',
         isOutside: true
       }
       ]

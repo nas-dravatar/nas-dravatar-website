@@ -10,19 +10,53 @@ export async function upload (photo) {
   return resp
 }
 
+export const asyncGetAddr = () => new Promise((resolve, reject) => {
+  window.postMessage({
+    'target': 'contentscript',
+    'data': {
+    },
+    'method': 'getAccount'
+  }, '*')
+  window.addEventListener('message', function (e) {
+    // e.detail contains the transferred data (can
+    if (e.data.data.account) {
+      resolve(
+        e.data.data.account
+      )
+    }
+  })
+})
+
+// const getCurrentWalletAddr = () => {
+//   window.postMessage({
+//     'target': 'contentscript',
+//     'data': {
+//     },
+//     'method': 'getAccount'
+//   }, '*')
+//   window.addEventListener('message', function (e) {
+//     // e.detail contains the transferred data (can
+//     console.log('recived by page:' + e + ', e.data:' + JSON.stringify(e.data))
+//     if (e.data.data.account) {
+//       e.data.data.account
+//     }
+//   })
+// }
+
 export async function get (from) {
   const to = network.testnet.address
-  const other = {'value': '0',
+  const other = {
+    'value': '0',
     'nonce': 0,
     'gasPrice': '1000000',
     'gasLimit': '2000000',
-    'contract': {'function': 'get', 'args': '[""]'}
+    'contract': { 'function': 'get', 'args': '[""]' }
   }
-  const {body} = await request
+  const { body } = await request
     .post('https://testnet.nebulas.io/v1/user/call')
-    .send(Object.assign({from, to}, other))
+    .send(Object.assign({ from, to }, other))
 
-  const {result} = body.result
-  const {value} = JSON.parse(result)
+  const { result } = body.result
+  const { value } = JSON.parse(result)
   return value
 }
