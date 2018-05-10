@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar is-transparent">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://i.loli.net/2018/05/09/5af2c04dd1530.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
-    </a>
+    <router-link class="navbar-item" to="/">
+      <img src="https://i.loli.net/2018/05/10/5af31ce5f31d3.png" alt="NAS Dravatar">
+    </router-link>
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
       <span></span>
       <span></span>
@@ -21,9 +21,9 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <a class="navbar-item" href="/documentation/overview/start/">
+        <!-- <a class="navbar-item" href="/documentation/overview/start/">
           My Dravatar
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
@@ -35,18 +35,27 @@ export default {
   name: 'Navbar',
   data () {
     return {
-      menuItems: [
-        {
-          name: '首页',
-          to: '/'
-        },
-        {
-          name: '文档',
-          to: 'https://github.com/neb-dravatar',
-          isOutside: true
-        }
+      menuItems: [{
+        name: '首页',
+        to: '/'
+      },
+      {
+        name: '上传头像',
+        to: '/my'
+      },
+      {
+        name: '文档',
+        to: 'https://github.com/nas-dravatar',
+        isOutside: true
+      }
       ]
     }
   }
 }
 </script>
+
+<style scoped>
+.navbar-item img {
+    max-height: 3.5rem;
+}
+</style>
