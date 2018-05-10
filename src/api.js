@@ -13,7 +13,7 @@ export async function upload (photo) {
 export async function get (from) {
   const to = network.testnet.address
   const other = {'value': '0',
-    'nonce': 6,
+    'nonce': 0,
     'gasPrice': '1000000',
     'gasLimit': '2000000',
     'contract': {'function': 'get', 'args': '[""]'}

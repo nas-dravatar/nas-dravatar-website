@@ -26,6 +26,8 @@
         <button @click="getBase64URI" class="button is-black"> 上传我的头像 </button>
   </div>
     <div class="column">
+      <!-- todo -->
+      <!-- getWalletAddr -->
         <img :src="base64" width="128"/>
     </div>
   </div>
@@ -50,11 +52,14 @@ export default {
   },
   methods: {
     async getBase64URI () {
-      const data = this.myCroppa.generateDataUrl('image/jpeg', 0.5)
-      const blob = await this.myCroppa.promisedBlob('image/jpeg', 0.5)
-      var file = new File([blob], 'dravatar')
-      console.log(file)
-      await upload(data)
+      const avatar = this.myCroppa.generateDataUrl('image/jpeg', 0.5)
+      const nickname = 'Frank'
+      const bio = 'Yukina is my waifu'
+      // const blob = await this.myCroppa.promisedBlob('image/jpeg', 0.5)
+      // var file = new File([blob], 'dravatar')
+      // console.log(file)
+      const payload = JSON.stringify({avatar, nickname, bio})
+      await upload(payload)
     }
   }
 }
